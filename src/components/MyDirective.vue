@@ -8,12 +8,9 @@
       <li>v-show 속성 = <span v-show="isShow" v-html="myhtml"></span></li>
       <li>v-if 속성 = <span v-if="value > 0" v-text="name"></span></li>
     </ul>
-    Name : <input type="text" v-model="name" />
-    <!-- <input type="text" :value="name" v-on:change=""  />  -->
     <ul>
         <!-- Elements in iteration expect to have 'v-bind:key' directives. -->
-        <!-- <li v-for="(todo, idx) in todos" :key="idx"> -->
-        <li v-for="todo in todoList" :key="todo.id">
+        <li v-for="(todo, idx) in todoList" :key="idx">
             {{todo.text}}
         </li>
     </ul>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld msg-value="Welcome to Your Vue.js App" />
+    <HelloWorld msg-value="Welcome to Your Vue.js App" v-on:addEvent="addTodoList" />
     <hr />
     <MyDirective title="동적Tag" :todo-list="todos" />
   </div>
@@ -19,11 +19,18 @@ export default {
   data() {
     return {
       todos: [
-        { id: 1, text: "Vue.js 튜토리얼 작성하기" },
-        { id: 2, text: "Webpack2 알아보기" },
-        { id: 3, text: "사이드 프로젝트 진행하기" },
+        { text: "Vue.js 튜토리얼 작성하기" },
+        { text: "Webpack2 알아보기" },
+        { text: "사이드 프로젝트 진행하기" },
       ],
     };
+  },//data
+  methods: {
+    addTodoList(todo) {
+      const todoObj = {text:todo};
+      //todos 배열에 추가
+      this.todos.push(todoObj);
+    }
   },
 };
 </script>
