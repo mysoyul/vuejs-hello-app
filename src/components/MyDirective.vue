@@ -13,7 +13,7 @@
     <ul>
         <!-- Elements in iteration expect to have 'v-bind:key' directives. -->
         <!-- <li v-for="(todo, idx) in todos" :key="idx"> -->
-        <li v-for="todo in todos" :key="todo.id">
+        <li v-for="todo in todoList" :key="todo.id">
             {{todo.text}}
         </li>
     </ul>
@@ -29,7 +29,7 @@
 </template>
 <script>
 export default {
-  props: ["title"], //부모컴포넌트에서 받은 변수
+  props: ["title", "todoList"], //부모컴포넌트에서 받은 변수
   data() {
     //자신의 컴포넌트에서 사용하는 변수
     return {
@@ -39,11 +39,7 @@ export default {
       value: 0,
       vuelogo: "https://vuejs.org/images/logo.png",
       anglogo: "https://angular.io/assets/images/logos/angular/angular.svg",
-      todos: [
-        { id:1, text: "Vue.js 튜토리얼 작성하기" },
-        { id:2, text: "Webpack2 알아보기" },
-        { id:3, text: "사이드 프로젝트 진행하기" },
-      ],
+    
     };
   },//data
   methods: {
