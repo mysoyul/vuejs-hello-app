@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg-value="Welcome to Your Vue.js App"/>
+    <hr />
+    <MyDirective title="동적Tag" />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import MyDirective from './components/MyDirective.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    MyDirective
   }
 }
 </script>
